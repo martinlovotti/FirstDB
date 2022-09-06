@@ -1,7 +1,6 @@
-//inicializamos socket
 const socket = io.connect();
 
-//funcion que se encarga de renderizar el listado de productos
+//renderiza el listado de productos
 function renderProducts() {
   fetch("http://localhost:8080/lista-productos")
     .then((response) => response.json())
@@ -19,7 +18,7 @@ function renderProducts() {
     });
 }
 
-//funcion que se encarga de renderizar los mensajes
+//renderiza los mensajes
 function renderMessages(data) {
   const html = data
     .map((el, index) => {
@@ -32,7 +31,7 @@ function renderMessages(data) {
   document.getElementById("mensajes").innerHTML = html;
 }
 
-//funcion que toma la info de los mensajes
+//info de los mensajes
 function addMessage(e) {
   const mensaje = {
     email: document.getElementById("mail").value,

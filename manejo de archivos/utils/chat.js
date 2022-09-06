@@ -1,7 +1,7 @@
 const { options } = require("../dataBase/options/sqliteDB.js");
 const knex = require("knex")(options);
 
-//funcion para mostrar todos los mensajes
+//mostrar todos los mensajes
 const list = async () => {
   try {
     const mensajes = await knex("chat").select("*");
@@ -11,7 +11,7 @@ const list = async () => {
   }
 };
 
-//funcion para guardar un mensaje
+//guardar un mensaje
 const save = async (message) => {
   try {
     knex("chat")

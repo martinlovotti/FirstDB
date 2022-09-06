@@ -3,6 +3,7 @@ const knex = require("knex")(options);
 
 knex.schema
   .createTable("chat", (table) => {
+    //Creamos tabla con sus columnas
     table.increments("id");
     table.string("email");
     table.string("fecha");
